@@ -1,0 +1,40 @@
+1. run npm init. A json file will be created
+2. npm install node-sass --save-dev
+   OR
+   npm install -g node-sass
+
+3 File structure of project should be like this :
+
+   name(folder)
+     css(folder)
+     saas(folder)
+     index.html
+     package.json
+
+4. Open package.json and edit script like following   :
+
+{
+  "name": "natoure",
+  "version": "1.0.0",
+  "description": "nature project",
+  "main": "index.js",
+  "scripts": {
+  "saas": "node-sass --watch saas/main.scss -o css"
+  },
+  "author": "vikash",
+  "license": "ISC"
+}
+
+5. now  "npm run saas"
+6.It will generate the respected css file in css folder
+
+           OR
+           Install Ruby
+
+Arguments  ->       --no-cache --update $FileName$:$FileNameWithoutExtension$.css
+Output  ->          $FileNameWithoutExtension$.css:$FileNameWithoutExtension$.css.map
+Program ->          C:\Ruby26-x64\bin\scss
+
+
+
+
