@@ -23,14 +23,14 @@
     }
 
 
-    // invalid validation on input ex:required
+    // invalid validation on input, ex:required
 
-    &:focus:invalid{
+    &:focus:invalid {
       border-bottom: 3px solid $color-secondary-dark;
     }
 
 
-    &::-webkit-input-placeholder{
+    &::-webkit-input-placeholder {
       color: $color-grey-dark-2;
     }
   }
@@ -46,16 +46,58 @@
   }
 
   // gives input label effects similar to material design
-  &__input:placeholder-shown + &__label{
+  &__input:placeholder-shown + &__label {
     opacity: 0;
     visibility: hidden;
     transform: translateY(-4rem);
   }
 
+  &__radio-group {
+    display: inline-block;
+    width: 48%;
+    font-size: $default-font-size;
+    cursor: pointer;
+  }
 
+  &__radio-label {
+    position: relative;
+    padding-left: 4.5rem;
 
+  }
 
+  &__radio-button {
+    width: 3rem;
+    height: 3rem;
+    display: inline-block;
+    border-radius: 50%;
+    border: 5px solid $color-primary;
+    position: absolute;
+    left: 0;
+    top: -4;
 
+    &::after {
+      content: " ";
+      width: 1.3rem;
+      height: 1.3rem;
+      opacity: 0;
+      border-radius: 50%;
+      background-color: $color-primary;
+      display: inline-block;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      transition: 0.3s ease all;
 
+    }
 
+  }
+
+  &__radio-input{
+    display: none;
+  }
+
+  &__radio-input:checked ~ &__radio-label  &__radio-button::after {
+      opacity: 1;
+  }
 }
